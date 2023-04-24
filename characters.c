@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_string - Prints a string to stdout.
@@ -13,18 +14,15 @@ int print_string(va_list args)
 	int count = 0, i = 0;
 	char *value = va_arg(args, char *);
 
-	if (!value)
+	if (value != NULL)
 	{
-		value = "(nil)";
+		while (value[i] != '\0')
+		{
+			_putchar(value[i]);
+			count++;
+			i++;
+		}
 	}
-
-	while (value[i] != '\0')
-	{
-		_putchar(value[i]);
-		count++;
-		i++;
-	}
-
 	return (count);
 }
 
