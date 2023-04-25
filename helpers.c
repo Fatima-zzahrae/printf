@@ -53,7 +53,7 @@ int (*wrapper(const char *format))(va_list)
 		{"%", print_percent},
 		{"d", print_int},
 		{"i", print_int},
-		{NULL,NULL}
+		{NULL, NULL}
 	};
 
 	for (; mappings[i].code; i++)
