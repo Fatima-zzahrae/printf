@@ -23,5 +23,7 @@ int (*wrapper(const char *))(va_list);
 int print_string(va_list args);
 int print_percent(va_list ap);
 int print_char(va_list ap);
+int _div(int d, unsigned int num);
+int print_int(va_list args);
 
 #endif
