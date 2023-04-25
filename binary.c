@@ -38,5 +38,5 @@ int to_binary_string(va_list ap)
 	}
 	buffer[i] = '\0';
 	reverse_str(buffer);
-	return( _puts(buffer));
+	return (_puts(buffer));
 }
