@@ -15,6 +15,14 @@ int to_binary_string(va_list ap)
 	int i = 0, r = 0;
 	char hex = (buffer[0] == 'A') ? 'A' : 'a';
 
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	if (n < 1)
+		return (-1);
+
 	(n == 0) && (buffer[i++] = '0');
 
 	while (n > 0)
