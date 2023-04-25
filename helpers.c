@@ -53,6 +53,7 @@ int (*wrapper(const char *format))(va_list)
 		{"%", print_percent},
 		{"d", print_int},
 		{"i", print_int},
+		{"b", to_binary_string},
 		{NULL, NULL}
 	};
 
@@ -64,4 +65,21 @@ int (*wrapper(const char *format))(va_list)
 		}
 	}
 	return (NULL);
+}
+
+/**
+ * _puts - a function that prints a string
+ * @str: string input
+ * Return: string
+ */
+int _puts(char *str)
+{
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		_putchar(str[i]);
+	}
+	_putchar('\n');
+	return (i);
 }

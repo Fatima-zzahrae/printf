@@ -25,5 +25,9 @@ int print_percent(va_list ap);
 int print_char(va_list ap);
 int _div(int d, unsigned int num);
 int print_int(va_list args);
+void reverse_str(char s[]);
+void _itoa(long n, char s[]);
+int _puts(char *str);
+int to_binary_string(va_list ap);
 
 #endif
