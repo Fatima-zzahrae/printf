@@ -14,14 +14,15 @@ int print_string(va_list args)
 	int count = 0, i = 0;
 	char *value = va_arg(args, char *);
 
-	if (value != NULL)
+	if (value == NULL)
 	{
-		while (value[i] != '\0')
-		{
-			_putchar(value[i]);
-			count++;
-			i++;
-		}
+		value = "(null)";
+	}
+	while (value[i] != '\0')
+	{
+		_putchar(value[i]);
+		count++;
+		i++;
 	}
 	return (count);
 }
