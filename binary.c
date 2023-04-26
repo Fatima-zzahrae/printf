@@ -11,10 +11,9 @@
 int to_binary_string(va_list ap)
 {
 	unsigned int n = va_arg(ap, unsigned int);
-	char buffer[50];
-	int i = 0, r = 0;
-	char hex = (buffer[0] == 'A') ? 'A' : 'a';
-
+	static char buffer[sizeof(unsigned int) * 8 + 1];
+	int i = sizeof(unsigned int) * 8 - 1;
+	
 	if (n == 0)
 	{
 		_putchar('0');
@@ -23,25 +22,12 @@ int to_binary_string(va_list ap)
 	if (n < 1)
 		return (-1);
 
-	(n == 0) && (buffer[i++] = '0');
-
-	while (n > 0)
+	buffer[i--] = '\0';
+	while (n != 0)
 	{
-		r = n % 2;
-
-		if (r < 10)
-		{
-			buffer[i] = r + '0';
-		}
-		else
-		{
-			buffer[i] = r - 10 + hex;
-		}
-		i++;
-
-		n /= 2;
+		buffer[i--] = n % 2 + '0';
+		n >>= 1;
 	}
-	buffer[i] = '\0';
-	reverse_str(buffer);
-	return (_puts(buffer));
+
+	return (_puts(&buffer[i + 1]));
 }
